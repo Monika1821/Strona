@@ -9,10 +9,10 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        
+        <div id="str">
         <header>
             <a href="Strona projektu.html">Powrót do strony projektu</a>
-            <h1 style="border-bottom: 2px solid rgb(125, 210, 247);">Etap 1</h1>
+            <h1 style="border-bottom: 2px solid rgb(125, 210, 247); padding: 2px;">Etap 1</h1>
         </header>
         <nav>
             <h1>Założenia</h1>
@@ -51,9 +51,9 @@
             <ol>
                 <li>sudo nano /etc/netplan/00-installer-config.yaml</li>
             </ol>
-            <p>Poniżej „dhcp4: true” dodać nową linie, wpisać dokładnie 4 spacje i napisać „enp0s8:”. W następnej linii wpisać dokładnie 6 spacji i dodać „dhcp4: true”. Powinno to wyglądać tak:</p>
+            <p class="baz">Poniżej „dhcp4: true” dodać nową linie, wpisać dokładnie 4 spacje i napisać „enp0s8:”. W następnej linii wpisać dokładnie 6 spacji i dodać „dhcp4: true”. Powinno to wyglądać tak:</p>
             <img src="1.12.png">
-            <p>Zapisać i wyjść. </p>
+            <p class="baz">Zapisać i wyjść. </p>
             <p>13.  Potem wpisać komendy:</p>
             <ol>
                 <li>sudo netplan apply</li>
@@ -68,5 +68,6 @@
 
 
         </section>
+        </div>
         </body>
 </html>
