@@ -4,31 +4,53 @@ a,
 ul,
 p{
 
-    font-family: "Lugrasimo", cursive;
+    font-family: "Montserrat", sans-serif;
+    padding: 10px;
    
     
 }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#str{
+    max-width: 1000px;
+    margin: 0 auto;
+    
+}
+.baz{
+    padding-left: 50px;
+}
+
 a{
     text-decoration: none;
     color:black
 }
-ol li{
-    font-family: "Lugrasimo", cursive;
+ol {
+    font-family: "Montserrat", sans-serif;
     color: rgb(0, 91, 248);
+    padding-left: 100px;
+   
+}
+img{
+    padding-left: 50px;
+    
 }
 
 header h1{
     text-align: center;
+    padding: 70px;
 }
-h1:hover{color: rgb(0, 128, 225);}
-header{
 
-}
+h1:hover{color: rgb(0, 128, 225);}
+
 
 
 #inf{
+    
     display: block;
-    padding: 60px;
+    padding: 10px;
     margin: 0;
     align-items: left;
 }
@@ -52,11 +74,12 @@ a:hover{color:rgb(0, 128, 255)}
 .menu{
     width: 100%;
     position:fixed;
-    top:auto;
+    top:0;
     right: 0;
     left: 0;
     padding: 0 3rem;
     background-color: rgb(21, 115, 177);
+    height: 30px;
     display:flex;
     flex-direction: row;
     align-items: center;
@@ -64,9 +87,9 @@ a:hover{color:rgb(0, 128, 255)}
     
 }
 .menu a{
-    margin: 0 1rem;
+    margin:  5rem;
     text-decoration: none;
-    padding: 100px;
+    padding: 0;
 
     
 
@@ -74,6 +97,7 @@ a:hover{color:rgb(0, 128, 255)}
 
 .dropdown{
     position: relative;
+
     
 }
 
@@ -119,3 +143,4 @@ a:hover{color:rgb(0, 128, 255)}
     display: block;
 
 }
+
