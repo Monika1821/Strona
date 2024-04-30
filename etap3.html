@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang = "pl">
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+        <header>
+            <a href="Strona projektu.html">Powrót do strony projektu</a>
+            <h1 style="border-bottom: 2px solid rgb(125, 210, 247)">Etap 3</h1>
+        </header>
+        <nav>
+            <h1>Założenia</h1>
+            <p>Celem tego etapu jest skonfigurowanie własnych runnerów dla zainstalowanego gitlaba.</p>
+        </nav>
+        <section>
+            <h1 style="padding-top: 50px;">Działanie:</h1>
+            <p>1. Wprowadzamy te dwie komendy.</p>
+            <img src="3.1.png">
+            <p>2. Po wykonaniu pierszych dwóch komend w zakładce AdminArea/ CI/CD /Runners możemy zobaczyć klucz ale też: </p>
+            <img src="3.2.png">
+            <p>Klikamy: Show runner installation and registration instruction</p>
+            <p>Pokazuje się okienko z następującymi komendami:</p>
+            <img src="3.3.png">
+            <p>Teraz możemy wykonać wyżej wypisane komendy komendy. </p>
+            <p>3.Następnie wpisujemy:</p>
+            <ol>
+                <li>sudo docker exec -it gitlab-runner /bin/bash</li>
+                <li>apt-get update</li>
+                <li>apt-get install vim</li>
+                <li>vi /etc/hosts</li>
+            </ol>
+            <p>4. Dopisujemy adres hosta i nazwe użytkownika. Wychdzimy z vim i z basha.</p>
+            <img src="3.4.png">
+            <p>5. Teraz możemy użyć komendy:</p>
+            <ol>
+                <li>sudo gitlab-runner register --url (ip gitlaba):(port) --registration-token (klucz który wyczytujemy ze strony)</li>
+            </ol>
+            <p>Dwie pierwsze opcje możemy zostawić puste w trzeciej wpisujemy:</p>
+            <ol>
+                <li>local-runner</li>
+            </ol>
+            <p>6. Koniec wygląda jak na dostarczonych wcześniej materiałach: </p>
+            <img src="3.5.png">
+            <p>W ten sposób mamy gotowy runner w gitlabie</p>
+            <img src="3.6.png">
+            
+            </section>
+            
+        </body>
+</html>

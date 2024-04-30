@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang = "pl">
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+        <header>
+            <a href="Strona projektu.html">Powrót do strony projektu</a>
+            <h1 style="border-bottom: 2px solid rgb(125, 210, 247);">Etap 2</h1>
+        </header>
+        <nav>
+            <h1>Założenia</h1>
+            <p>Celem tego etapu jest postawianie i poprawne skonfigurowanie narzędzia gitlab na przygotowanym wcześniej systemie (na jedenej z 4 maszyn). Narzędzie to należy skonfigurować na Docker wykorzystując docker-compose.</p>
+        </nav>
+        <section>
+            <h1 style="padding-top: 50px;">Działanie:</h1>
+            <p>1. Wpierw, sprawdzamy czy na naszej maszynie znajduje się zainstalowany docker. Do tego wykorzystujemy polecenie “docker --version”.</p>
+            <img src="2.1.png">
+            <p>W tym przypadku musimy go zainstalować komendą:</p>
+            <ol>
+                <li>sudo apt install docker.io</li>
+            </ol>
+            <p>2.Potem możemy włączyć opcje by docker uruchamiał się razem z systemem z użyciem komeny:</p>
+            <ol>
+                <li>systemctl enable docker</li>
+            </ol>
+            <p>3. Teraz możemy stworzyć plik yaml który będzie zawierał informacje o naszym kontenerze. </p>
+            <p>W konsole wpisujemy:</p>
+            <ol>
+                <li>nano docker-compose.yaml</li>
+            </ol>
+            <p>Wtedy otworzy się pusty plik w który wpisujemy:</p>
+            <img src="2.3.png">
+            <p>4. Teraz gdy plik jest gotowy, używamy:</p>
+            <ol>
+                <li>docker-compose up -d</li>
+            </ol>
+            <p>W tym momencie zaczynamy pobierać obraz do kontenera a usługa zacznie się konfigurować. Zajmie to chwile.</p>
+            <p>Śledzić to możemy komendą: </p>
+            <ol>
+                <li>docker logs -f gitlab</li>
+            </ol>
+            <p>5. Jeżeli wszystko zadziałało w naszej sieci działa teraz skonfigurowany serwer lokalny gitlab. By na niego się dostać wystarczy w przeglądarce podać adres maszyny oraz port 80.</p>
+            <img src="2.5.png">
+            <p>Nazwa uytkowanika to root a by znaleźć hasło potrzebujemy użyć:</p>
+            <ol>
+                <li>docker exec -it gitlab grep 'Password: ' /etc/gitlab/initial_root_password</li>
+            </ol>
+            <img src="2.6.png" >
+            <p>6. Po zalogowaniu pokauje sie taka strona</p>
+            <img src="2.7.png">
+        </section>
+
+        </body>
+</html>

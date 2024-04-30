@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang = "pl">
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+        <header>
+            <a href="Strona projektu.html">Powrót do strony projektu</a>
+            <h1 style="border-bottom: 2px solid rgb(125, 210, 247);">Etap 1</h1>
+        </header>
+        <nav>
+            <h1>Założenia</h1>
+            <p>Celem tego etapu jest przygotowanie systemu operacyjnego do realizacji projektu. Na maszynie wirtualnej (lub innym preferowanym rozwiązaniu np. VDI) musi być zainstalowany system operacyjny Ubuntu wraz z narzędziami docker i docker-compose. Ponadto na maszynach wirtualnych musi być dostępne połączenie ssh. W tym etapie należy skonfigurować 4 maszyny.</p>
+        </nav>
+        <section>
+            <h1 style="padding-top: 50px;">Działanie:</h1>
+            <p>1. Najpierw nazywamy maszyny najlepiej w jakieś znormalizowanej formie dla łatwości zarządzania nimi.</p>
+            <img src="1.1.png">
+            <p>2. Wybieramy wersje wersję pierwszą by móc normalnie korzystać z funkcji.</p>
+            <img src="1.2.png">
+            <p>3. Teraz ważny jest ten krok ponieważ ustawiamy tutaj hasło sudo, które będziemy wykorzystywać do połączenia ssh.</p>
+            <img src="1.3.png">
+            <p>4. Teraz możemy wybrać by już przy instalacji zainstalowany został serwer ssh. Można też później zrobić to ręcznie.</p>
+            <img src="1.4.png">
+            <p>5. Teraz możemy zainstalować narzędzie „docker” lub jak wyżej zrobić to później ręcznie.</p>
+            <img src="1.5.png">
+            <p>6. Po zainstalowaniu systemu trzeba wyłączyć maszynę wirtualną i dodać kartę sieciową.</p>
+            <img src="1.6.png">
+            <p>7. Wybieramy maszynę która nas interesuje i wybieramy „Settings”.</p>
+            <p>8. Wchodzimy w zakładkę „Network” i włączamy drugą kartę sieciową. Dodajemy „Host-only Adapter”.  </p>
+            <img src="1.8.png">
+            <p>9. Najeżdżamy na „File” potem na „Tools” i na końcu wybieramy „Network manager”.</p>
+            <img src="1.9.png">
+            <p> </p>
+            <img src="1.10.png">
+            <p>10. W przypadku gdy żadnego nie ma dodajemy za pomocą „Create”. Potem wchodzimy w „Properties” i konfigurujemy serwer dhcp. </p>
+            <img src="1.11.png">
+            <p>11. Z powrotem uruchamiamy maszynę i kolejno wpisujemy komendy: </p>
+            <ol>
+                <li>sudo apt-get install net-tools</li>
+                <li>sudo apt-get install docker.io</li>
+                <li>sudo apt-get install docker-compose</li>
+            </ol>
+            <p>12. Teraz trzeba  skonfigurować kartę sieciową dodaną wcześniej na maszynie wirtualnej. </p>
+            <ol>
+                <li>sudo nano /etc/netplan/00-installer-config.yaml</li>
+            </ol>
+            <p>Poniżej „dhcp4: true” dodać nową linie, wpisać dokładnie 4 spacje i napisać „enp0s8:”. W następnej linii wpisać dokładnie 6 spacji i dodać „dhcp4: true”. Powinno to wyglądać tak:</p>
+            <img src="1.12.png">
+            <p>Zapisać i wyjść. </p>
+            <p>13.  Potem wpisać komendy:</p>
+            <ol>
+                <li>sudo netplan apply</li>
+                <li>reboot</li>
+            </ol>
+            <p>14. Komendą „ip -br address” sprawdzić czy doszło do przypisania adresu ipv4 i zpingować z innej  maszyny wirtualnej poleceniem „ping”.</p>
+            <p>15. Teraz by połączyć się przez ssh wystarczy wpisać:</p>
+            <ol>
+                <li>ssh [nazwa użytkownika]@[adres maszyny]</li>
+            </ol>
+            <img src="1.13.png">
+
+
+        </section>
+        </body>
+</html>
